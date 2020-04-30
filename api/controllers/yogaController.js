@@ -39,7 +39,7 @@ exports.destroy = (req, res) => {
   Yoga.deleteOne({ _id: req.params.yogaId }, (err) => {
     if (err) res.send(err);
     res.json({
-      message: 'User successfully deleted',
+      message: 'Yoga successfully deleted',
       _id: req.params.yogaId
     });
   });

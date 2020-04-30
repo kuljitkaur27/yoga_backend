@@ -39,7 +39,7 @@ exports.destroy = (req, res) => {
   Package.deleteOne({ _id: req.params.packageId }, (err) => {
     if (err) res.send(err);
     res.json({
-      message: 'User successfully deleted',
+      message: 'Package successfully deleted',
       _id: req.params.packageId
     });
   });

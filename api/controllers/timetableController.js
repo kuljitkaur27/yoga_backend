@@ -17,7 +17,7 @@ exports.create = (req, res) => {
 };
 
 exports.show = (req, res) => {
-  Timetable.findById(req.params.timetableId, (err, timetable) => {
+  Timetable.findById(req.params.classId, (err, timetable) => {
     if (err) res.send(err);
     res.json(timetable);
   })
@@ -25,7 +25,7 @@ exports.show = (req, res) => {
 
 exports.update = (req, res) => {
   Timetable.findOneAndUpdate(
-    { _id: req.params.timetableId },
+    { _id: req.params.classId },
     req.body,
     { new: true },
     (err, timetable) => {
@@ -36,11 +36,11 @@ exports.update = (req, res) => {
 }
 
 exports.destroy = (req, res) => {
-  Timetable.deleteOne({ _id: req.params.timetableId }, (err) => {
+  Timetable.deleteOne({ _id: req.params.classId }, (err) => {
     if (err) res.send(err);
     res.json({
-      message: 'User successfully deleted',
-      _id: req.params.timetableId
+      message: 'Timetable successfully deleted',
+      _id: req.params.classId
     });
   });
 }

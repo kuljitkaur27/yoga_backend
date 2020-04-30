@@ -17,7 +17,7 @@ exports.create = (req, res) => {
 };
 
 exports.show = (req, res) => {
-  User.findById(req.params.userId, (err, user) => {
+  User.findById(req.params.instructorId, (err, user) => {
     if (err) res.send(err);
     res.json(user);
   })
@@ -25,7 +25,7 @@ exports.show = (req, res) => {
 
 exports.update = (req, res) => {
   User.findOneAndUpdate(
-    { _id: req.params.userId },
+    { _id: req.params.instructorId },
     req.body,
     { new: true },
     (err, user) => {
@@ -36,11 +36,11 @@ exports.update = (req, res) => {
 }
 
 exports.destroy = (req, res) => {
-  User.deleteOne({ _id: req.params.userId }, (err) => {
+  User.deleteOne({ _id: req.params.instructorId}, (err) => {
     if (err) res.send(err);
     res.json({
       message: 'User successfully deleted',
-      _id: req.params.userId
+      _id: req.params.instructorId
     });
   });
 }
