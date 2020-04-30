@@ -5,11 +5,19 @@ const { Schema } = mongoose;
 const TimetableSchema = new Schema({
   fromDate: {
     type: Date,
-    required: 'FromDateTime is mandatory'
+    required: 'FromDate is mandatory'
   },
   toDate: {
     type: Date,
-    required: 'ToDateTime is mandatory'
+    required: 'ToDate is mandatory'
+  },
+  fromTime: {
+    type: Date,
+    required: 'FromTime is mandatory'
+  },
+  toTime: {
+    type: Date,
+    required: 'ToTime is mandatory'
   },
   instructorId: String,
   instructorName: String,
