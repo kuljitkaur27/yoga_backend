@@ -1,10 +1,10 @@
 # yoga_backend
 
 Node.js
-	Express
-	MongoDB
-	body-parser
-	Mongoose
+	Express,
+	MongoDB,
+	body-parser,
+	Mongoose,
 	axios
   
   
